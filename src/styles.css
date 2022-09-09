@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+.ng-dropdown-panel .scroll-host {
+    background-color: #fff !important;
+    border-radius: 10px !important;
+    padding: 0.3em !important;
+  }
+  

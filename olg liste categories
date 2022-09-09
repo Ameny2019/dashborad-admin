@@ -1,0 +1,96 @@
+
+<!-- cette partie contient les premiers produits : timbres poste à vendre pour la page home -->
+
+<div class="container"><h3 class=" text-center text-warning"> Les timbres de La Poste tunisienne</h3>
+<h4 class="text-center ">Retrouvez les nouveautés et les collections de luxe !</h4> </div>
+<div class="row px-xl-5 pb-3">
+    <!-- image 1 -->
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 pb-1" *ngFor="let product of products" >
+        <div class="card product-item border-0 mb-4">
+            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                <img class="img-fluid w-100" src="http://localhost:3000/{{product?.estamp?.photo}}" alt="">
+            </div>
+            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                <div class="d-flex justify-content-center">
+                    <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div>
+        </div>
+    </div>
+
+
+            <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+                        <p class="text-right"> dispo en stock</p>
+                        <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                            <img class="img-fluid" src="http://localhost:3000/{{estamps[0].photo}}" alt="">
+                        </a>
+                        <h5 class="font-weight-semi-bold m-0"> {{estamps[0].sujet}} </h5>
+                    </div>
+            </div>
+    <!-- image 2 -->
+    <div class="col-lg-4 col-md-6 pb-1">
+        <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+            <p class="text-right">dispo en stock</p>
+            <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                <img class="img-fluid" src="http://localhost:3000/{{estamps[1].photo}}" alt="">
+            </a>
+            <h5 class="font-weight-semi-bold m-0">{{estamps[1].sujet}}</h5>
+        </div>
+    </div>
+        <!-- image 3 -->
+
+    <div class="col-lg-4 col-md-6 pb-1">
+        <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+            <p class="text-right">dispo en stock</p>
+            <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                <img class="img-fluid" src="http://localhost:3000/{{estamps[2].photo}}" alt="">
+            </a>
+            <h5 class="font-weight-semi-bold m-0"> {{estamps[2].sujet}}</h5>
+        </div>
+    </div>
+        <!-- image 4 -->
+
+    <div class="col-lg-4 col-md-6 pb-1">
+        <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+            <p class="text-right">dispo en stock</p>
+            <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                <img class="img-fluid" src="http://localhost:3000/{{estamps[3].photo}}" alt="">
+            </a>
+            <h5 class="font-weight-semi-bold m-0">{{estamps[3].sujet}}</h5>
+        </div>
+    </div>
+        <!-- image 5 -->
+
+    <div class="col-lg-4 col-md-6 pb-1">
+        <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+            <p class="text-right">dispo en stock</p>
+            <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                <img class="img-fluid" src="http://localhost:3000/{{estamps[4].photo}}" alt="">
+            </a>
+            <h5 class="font-weight-semi-bold m-0"> {{estamps[4].sujet}}</h5>
+        </div>
+    </div>
+        <!-- image 6-->
+
+    <div class="col-lg-4 col-md-6 pb-1">
+        <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+            <p class="text-right">dispo en stock</p>
+            <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                <img class="img-fluid" src="http://localhost:3000/{{estamps[5].photo}}" alt="">
+            </a>
+            <h5 class="font-weight-semi-bold m-0">{{estamps[5].sujet}} </h5>
+        </div>
+    </div>
+</div>
+
+
+
+

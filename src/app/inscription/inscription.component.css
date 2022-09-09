@@ -1,0 +1,21 @@
+#div1 {
+    display: flex;
+    max-width: 400px;
+    margin-left: 430px;
+
+}
+
+
+.form-control {
+
+    min-width: 400px;
+    margin-right: 15px;
+}
+
+
+
+.bodyall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

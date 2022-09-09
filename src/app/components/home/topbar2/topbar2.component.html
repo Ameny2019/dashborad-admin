@@ -1,0 +1,33 @@
+<div class="row align-items-center py-3 px-xl-5">
+    <div class="col-lg-3 d-none d-lg-block">
+        <a href="" class="text-decoration-none">
+            <h1 class="m-0 display-5 font-weight-semi-bold">e-Shop <h3>by la Poste Tunisienne </h3>
+            </h1>
+        </a>
+    </div>
+    <div class="col-lg-6 col-6 text-left">
+        <form action="">
+            <div class="input-group">
+                <ng-select [items]="cars" bindLabel="name" placeholder="Recherche" class="form-control" bindValue="id"
+                    [(ngModel)]="selectedCar">
+                </ng-select>
+                <!-- <input type="text" class="form-control" placeholder="Search for products"> -->
+                <div class="input-group-append">
+                    <span class="input-group-text bg-transparent text-warning">
+                        <i class="fa fa-search"></i>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-3 col-6 text-right">
+        <a href="" class="btn border">
+            <i class="fas fa-heart text-warning"></i>
+        </a>
+        <a routerLink="/cartDetail" class="btn border">
+         <i class="fas fa-shopping-cart text-warning">
+            <div class="position-absolute top-0 start-100 translate-middle badge text-white rounded-circle" style="background-color:#1E1B58 ;">{{cartService.tempCartItems.length}}</div></i>
+       
+        </a>
+    </div>
+</div>
