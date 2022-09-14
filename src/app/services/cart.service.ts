@@ -8,7 +8,11 @@ import {MessageService} from "primeng/api";
 })
 export class CartService {
   public tempCartItems: any[] = [];
-  constructor(private http: HttpClient, private messageService: MessageService) {}
+  constructor(private http: HttpClient, private messageService: MessageService) {
+    if (localStorage.getItem('cart') !== null && localStorage.getItem('cart') !== undefined) {
+      this.tempCartItems = JSON.parse(localStorage.getItem('cart'));
+    }
+  }
 
   addToCartTemp(data: any) {
     let product = this.tempCartItems.find((produit) => produit.productId === data.productId);
@@ -19,6 +23,7 @@ export class CartService {
     }
     console.log(data);
     this.messageService.add({severity:'success', summary:'Panier', detail:'Produit ajouté avec succès'});
+    this.persistCart();
 
   }
 
@@ -32,6 +37,11 @@ export class CartService {
     console.log('here ajout article : ', product);
 
     return this.http.post(`${environment.baseURL}/Cart/addItem`, product);
+  }
+
+  persistCart() {
+    let cartStr = JSON.stringify(this.tempCartItems);
+    localStorage.setItem('cart', cartStr);
   }
 
   getCartProduct() {
@@ -50,8 +60,10 @@ export class CartService {
   deleteItmCart(ind: number) {
     let newList = this.tempCartItems.filter((item, index) => index !== ind);
     this.tempCartItems = newList;
+    this.persistCart();
   }
   clearCart() {
     this.tempCartItems = [];
+    localStorage.removeItem('cart');
   }
 }
