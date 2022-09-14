@@ -9,25 +9,23 @@
     <div class="col-lg-3 col-md-6 col-sm-12 pb-1" *ngFor="let product of products">
         <div class="card product-item border-0 mb-4">
             <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <img class="img-fluid w-100" src="http://localhost:3000/{{product?.estamp?.photo}}" alt=""
-                    style="height: 350PX;">
+                <img (click)="toDetail(product)" class="img-fluid w-100" src="http://localhost:3000/{{product?.estamp?.photo}}" alt="imgtimbre"
+                    style="height: 550PX;padding: 50px; background-color: rgba(0, 0, 0, 0.27);"  >
             </div>
             <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                <h6 class="text-truncate mb-3">{{product?.estamp?.reference}}</h6>
+                <h6 class="text-truncate mb-3">{{product?.estamp?.sujet}}</h6>
                 <div class="d-flex justify-content-center">
-                    <h6>{{product?.price}}</h6>
+                    <h6 style="font-size: 20px; color:#fd0000;">Prix : {{product?.price/1000}} DT</h6>
                 </div>
+                <span class="badge badge-pill badge-success " > En Stock  </span>
             </div>
-            <div class="card-footer d-flex justify-content-between bg-light border">
-                <a (click)="toDetail(product)" class="btn btn-sm text-dark p-0"><i
-                        class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                <a class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To
-                    Cart</a>
+
+            <div class="card-footer d-flex justify-content-center bg-light border">
+                <a (click)="toDetail(product)" class="btn btn-sm text-dark "><i
+                        class="fas fa-eye text-primary mr-1"></i>Voir details</a>
+                <!-- <a class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Ajouter au panier</a> -->
             </div>
         </div>
     </div>
-
-
 </div>
 
-<hr>

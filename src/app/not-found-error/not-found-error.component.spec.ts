@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EventComponent } from './event.component';
+import { NotFoundErrorComponent } from './not-found-error.component';
 
-describe('EventComponent', () => {
-  let component: EventComponent;
-  let fixture: ComponentFixture<EventComponent>;
+describe('NotFoundErrorComponent', () => {
+  let component: NotFoundErrorComponent;
+  let fixture: ComponentFixture<NotFoundErrorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EventComponent ]
+      declarations: [ NotFoundErrorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EventComponent);
+    fixture = TestBed.createComponent(NotFoundErrorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

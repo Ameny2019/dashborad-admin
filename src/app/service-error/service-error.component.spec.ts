@@ -1,19 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AllproductComponent } from './allproduct.component';
 
-describe('AllproductComponent', () => {
-  let component: AllproductComponent;
-  let fixture: ComponentFixture<AllproductComponent>;
+import { ServiceErrorComponent } from './service-error.component';
+
+describe('ServiceErrorComponent', () => {
+  let component: ServiceErrorComponent;
+  let fixture: ComponentFixture<ServiceErrorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AllproductComponent ]
+      declarations: [ ServiceErrorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AllproductComponent);
+    fixture = TestBed.createComponent(ServiceErrorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

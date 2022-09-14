@@ -4,3 +4,59 @@
     display: flex;
     justify-content: center;
 }
+
+
+
+
+#div1{
+    width: 550px;
+}
+
+#bodyall{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(128, 128, 128, 0.068);
+    height: 100vh;
+
+}
+
+#forminscri{
+
+   
+   
+    border-radius: 20px 0;
+    border-width: 0.7px;
+    padding : 50px;
+    background-color: #FDC600;
+    box-shadow: 16px 13px 28px -6px rgba(0,0,0,0.52);
+-webkit-box-shadow: 16px 13px 28px -6px rgba(0,0,0,0.52);
+-moz-box-shadow: 16px 13px 28px -6px rgba(0,0,0,0.52);
+    
+
+}
+
+
+input {
+    border-radius: 20px;
+    border-style:dashed;
+    border-color: #1e1b58;
+    border-width: 2px;
+    background-color: rgba(255, 255, 253, 0.661) ;
+    color: #1e1b58;
+    width: 400px;
+}
+input#check1 {
+    width: auto;
+}
+
+
+
+.btn{
+
+    background-color:#1e1b58 ;
+    color: #FDC600;
+    margin-top: 10px;
+    
+    
+}

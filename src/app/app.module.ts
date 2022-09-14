@@ -22,7 +22,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ProgAnnuelComponent } from './components/prog-annuel/prog-annuel.component';
 import { QrComponent } from './components/qr/qr.component';
 import { EfleureComponent } from './components/home/efleure/efleure.component';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+
 import { LayoutComponent } from './components/layout/layout.component';
 import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
 import { InscriptionComponent } from './inscription/inscription.component';
@@ -32,6 +32,11 @@ import { StripeModule } from "stripe-angular";
 import {MessageService} from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { BannerComponent } from './components/home/banner/banner.component';
+import { NotFoundErrorComponent } from './not-found-error/not-found-error.component';
+import { ServiceErrorComponent } from './service-error/service-error.component';
+import { HistphilComponent } from './components/histphil/histphil.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,11 +58,16 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ProgAnnuelComponent,
     QrComponent,
     EfleureComponent,
-    ProductDetailComponent,
+   
     LayoutComponent,
     CartDetailComponent,
     InscriptionComponent,
     ProfileComponent,
+    BannerComponent,
+    NotFoundErrorComponent,
+    ServiceErrorComponent,
+    HistphilComponent,
+   
   ],
   imports: [
     BrowserModule,

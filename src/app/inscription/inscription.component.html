@@ -1,52 +1,87 @@
 <app-topbar1></app-topbar1>
 
 
-<div class="bodyall" >
-
-  <span class="badge badge-pill badge-warning" style="margin-top:50px;" > Créer votre compte ici ! </span> -->
-
-  <div class="container" id="div1">
 
 
-    <div class="cols-sm-10" style="margin:0 0 0 100px; color: #1e1b58;">
 
-      <form [formGroup]="registeForm" (ngSubmit)="register()" class="needs-validation" novalidate>
+<div id="bodyall">
 
-        <h3 style="color: #1e1b58 ; max-width: 400px; padding-bottom:50px;">
-          Inscrivez vous sur Eshop en quelques clics!
-        </h3>
+  
+
+
+
+
+ 
+  <div id="div1">
+    <span class="badge badge-pill badge-warning mt-5" > Créer votre compte ici !  </span>   -->
+
+
+    <h4 style="color: #1e1b58; width:800px; margin: 35px 0">
+      Inscrivez vous sur Eshop en quelques clics!
+    </h4>
+    <div id ="forminscri" class="cols-sm-10" style="color: #1e1b58 ;">
+      <form
+        [formGroup]="registeForm"
+        (ngSubmit)="register()"
+        class="needs-validation"
+        novalidate
+      >
+        
 
         <div class="form-group">
-
-          <label for="nom" class="cols-sm-2 control-label" aria-placeholder="votre nom ici">
+          <label
+            for="nom"
+            class="cols-sm-2 control-label"
+            aria-placeholder="votre nom ici"
+          >
             Nom & prenom
           </label>
 
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" name="nom" formControlName="nom" id="nom"
-                placeholder="votre nom ici*" />
-              <span *ngIf="
-                    !registeForm.get('nom').valid &&
-                    registeForm.get('nom').touched
-                  " style="color: red">
-                *Ce champs est obligatoire!
-              </span>
+          <div class=" d-flex align-items-baseline cols-sm-10">
+            <span class="input-group-addon "><i class="fa fa-user fa mr-2" aria-hidden="true"></i></span>
+            <div class="inputinsc" >
+              
+              <input
+                type="text"
+                class="form-control "
+                name="nom"
+                formControlName="nom"
+                id="nom"
+                placeholder="votre nom ici * "             
+
+             
+              />
+              
+              <span *ngIf="!registeForm.get('nom').valid && registeForm.get('nom').touched" style="color: red"> *Ce champs est obligatoire! </span>
+
             </div>
           </div>
 
           <div class="form-group">
             <label for="email" class="cols-sm-2 control-label">Email</label>
-            <div class="cols-sm-10">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="false"></i></span>
-                <input type="text" class="form-control" formControlName="email" name="email" id="email"
-                  placeholder="votre email ici" required />
-                <span *ngIf="
-                      !registeForm.get('email').valid &&
-                      registeForm.get('email').touched
-                    " style="color: red">
+            <div class="  d-flex align-items-baseline cols-sm-10">
+
+              <span class="input-group-addon"
+                  ><i class="fa fa-envelope fa mr-2 " aria-hidden="false"></i
+                ></span>
+              <div class="inputinsc">
+                
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="email"
+                  name="email"
+                  id="email"
+                  placeholder="votre email ici"
+                  required
+                />
+                <span
+                  *ngIf="
+                    !registeForm.get('email').valid &&
+                    registeForm.get('email').touched
+                  "
+                  style="color: red ;"
+                >
                   *Ce champs est obligatoire!
                 </span>
                 <div class="valid-feedback">valide</div>
@@ -57,16 +92,32 @@
 
           <div class="form-group">
             <label for="password" class="cols-sm-2 control-label">
-              Mot de passe</label>
-            <div class="cols-sm-10">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="password" formControlName="password" id="password"
-                  placeholder="Votre mot de passe ici (min 8 carac.)" required />
-                <span class="champsob" *ngIf="
-                      !registeForm.get('password').valid &&
-                      registeForm.get('password').touched
-                    " style="color: red ;">
+              Mot de passe</label
+            >
+            <div class=" d-flex align-items-baseline cols-sm-10">
+
+              <span class="input-group-addon"
+              ><i class="fa fa-lock fa-lg mr-2" aria-hidden="true"></i
+            ></span>
+              <div class="inputinsc">
+               
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  formControlName="password"
+                  id="password"
+                  placeholder="Votre mot de passe ici (min 8 carac.)"
+                  required
+                />
+                <span
+                  class="champsob"
+                  *ngIf="
+                    !registeForm.get('password').valid &&
+                    registeForm.get('password').touched
+                  "
+                  style="color: red"
+                >
                   *Ce champs est obligatoire!
                 </span>
 
@@ -77,40 +128,75 @@
           </div>
 
           <div class="form-group">
-            <label for="confirm" class="cols-sm-6 control-label">Confirmer
+            <label for="confirm" class="cols-sm-6 control-label"
+              >Confirmer
             </label>
-            <div class="cols-sm-10">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" formControlName="passwordconfirm" name="passwordconfirm"
-                  id="confirm" placeholder="Confirmer votre mot de passe" required />
-                <span *ngIf="
-                      !registeForm.get('passwordconfirm').valid &&
-                      registeForm.get('passwordconfirm').touched
-                    " style=" color: red">
+            <div class="d-flex align-items-baseline  cols-sm-10">
+
+              <span class="input-group-addon"
+              ><i class="fa fa-lock fa-lg mr-2" aria-hidden="true"></i
+            ></span>
+              <div class="inputinsc">
+               
+                <input
+                  type="password"
+                  class="form-control"
+                  formControlName="passwordconfirm"
+                  name="passwordconfirm"
+                  id="confirm"
+                  placeholder="Confirmer votre mot de passe"
+                  required
+                />
+                <span
+                  *ngIf="
+                    !registeForm.get('passwordconfirm').valid &&
+                    registeForm.get('passwordconfirm').touched
+                  "
+                  style="color: red"
+                >
                   *Ce champs est obligatoire!
                 </span>
               </div>
             </div>
           </div>
 
-          <div class="form-check" style="margin-top:50px; max-width: 400px;">
-            <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" nochecked />
-            <label class="form-check-label" style="max-width: 1000px;">
+
+
+      
+
+
+
+          <div class="form-check">
+            <input
+              class=" form-check-input"
+              type="checkbox"
+              id="check1"
+              name="option1"
+              value="something"
+              nochecked
+            />
+            <label class="form-check-label">
               j'ai lu et j'accepte
-              <a id="jaune" href="www.poste.tn">les conditions générales de vente</a>
-              pour la Poste Tunisienne
+              <a style="color:#ffffff;text-decoration: underline;" href="www.poste.tn"
+                >les conditions générales de vente</a
+              >
+              de la Poste Tunisienne
             </label>
+
+            
           </div>
 
           <!-- button de validation-->
           <div class="form-group" id="btn-modif">
-            <button type="submit" style="margin: 30px  50px 0 0" class="btn btn-warning"
-              [disabled]="!registeForm.valid">
+            <button
+              type="submit"
+              class="btn mr-3"
+              [disabled]="!registeForm.valid"
+            >
               S'inscrire
             </button>
             <span> </span>
-            <button type="button" routerLink="" class="btn btn-warning" style="margin: 30px  50px 0 0">
+            <button type="button" routerLink="" class="btn">
               Annuler
             </button>
           </div>
@@ -121,6 +207,3 @@
     </div>
   </div>
 </div>
-
-
-<app-footer></app-footer>

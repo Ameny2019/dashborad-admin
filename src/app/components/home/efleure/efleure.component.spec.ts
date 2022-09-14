@@ -2,6 +2,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EfleureComponent } from './efleure.component';
 
+
+
+
+
 describe('EfleureComponent', () => {
   let component: EfleureComponent;
   let fixture: ComponentFixture<EfleureComponent>;

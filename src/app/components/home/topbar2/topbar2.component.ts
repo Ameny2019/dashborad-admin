@@ -1,6 +1,8 @@
-import { ProductService } from './../../../services/product.service';
+import { ProductService } from '../../../services/product.service';
 import { Component, OnInit } from '@angular/core';
 import {CartService} from "../../../services/cart.service";
+
+
 
 @Component({
   selector: 'app-topbar2',
@@ -10,11 +12,11 @@ import {CartService} from "../../../services/cart.service";
 export class Topbar2Component implements OnInit {
   selectedCar: number;
 
-  cars = [
-    { id: 1, name: 'Volvo' },
-    { id: 2, name: 'Saab' },
-    { id: 3, name: 'Opel' },
-    { id: 4, name: 'Audi' },
+  Prod = [
+    { id: 1, name: 'Fleurs' },
+    { id: 2, name: 'Stamps' },
+    { id: 3, name: 'Poste' },
+    { id: 4, name: 'Tunisienne' },
   ];
   constructor(private productServ: ProductService, public cartService: CartService) {}
 
@@ -37,7 +39,7 @@ export class Topbar2Component implements OnInit {
       });
       console.log('Product list', productTempList);
       let list = productTempList.filter((elm) => elm !== null);
-      this.cars= list ;
+      this.Prod= list ;
     });
   }
 }

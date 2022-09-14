@@ -1,0 +1,4 @@
+.row.px-xl-5 {
+    display: flex;
+    justify-content: flex-end;
+}

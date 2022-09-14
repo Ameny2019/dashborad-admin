@@ -1,0 +1,20 @@
+#all-carousel {
+  width: 72%;
+  margin-top: -50px;
+
+ 
+  
+}
+
+
+/* change transition duration to control the speed of fade effect */
+.carousel-item {
+    transition: transform ease-in-out 1.5s ;
+
+
+  }
+  
+  .carousel-fade .active.carousel-item-start,
+  .carousel-fade .active.carousel-item-end {
+    transition: opacity 0s 2.6s;
+  }

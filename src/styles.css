@@ -4,4 +4,10 @@
     border-radius: 10px !important;
     padding: 0.3em !important;
   }
-  
+
+
+  app-banner  {
+
+    display: flex;
+
+justify-content: flex-end;  }

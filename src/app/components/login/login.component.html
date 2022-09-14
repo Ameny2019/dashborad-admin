@@ -1,52 +1,65 @@
+
+
+
+
 <app-topbar1></app-topbar1>
 
-<div class="container">
-  <div style="width:400px">
-    <div class="col">
-      <!-- <h1 class='cover-title'>Achetez la dernière <br/> collection 2022</h1> -->
-    </div>
-    <div class="col">
-      <span style="margin-top: 50px;" class="badge badge-pill badge-warning">Connectez-vous ici ! </span> -->
-
-      <form [formGroup]="formLogin" (ngSubmit)="login()" >
-        <div class="alert alert-danger" *ngIf="errorLogin">Email ou mot de passe incorrecte !!</div>
-        <h3  style ="margin: 50px 0" class="mb-4 display-5 font-weight-semi-bold"> Accéder à votre compte </h3>
-        <div class="form-floating mb-3 mt-3">
-          <label for="email">Email</label>
-          <input type="text" class="form-control" id="email" placeholder="Votre email ici" formControlName="email" name="email">
-
-        </div>
-        <div class="form-floating mt-3 mb-3">
-          <label for="pwd">Password</label>
-          <input type="password" class="form-control" id="pwd" placeholder="Votre mot de passe ici" formControlName="password" name="pswd">
-
-          <br />
-
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <button style="margin-top:20px;" type="submit" class=" btn-sm-6 btn btn-warning">Se connecter </button>
-              </div>
-              <div class="col">
-                <button style="margin-top:20px;" type="submit" routerLink="" class=" btn-sm-6 btn btn-outline-dark">Annuler </button>
-
-              </div>
-            <br/>
-
-              <div style="margin-top:20px;">
-                <a href="/inscription"> Créer un compte ? </a>
+<div id="bodyall">
+  <div id="div1">
+    <span class="badge badge-pill badge-warning mt-5" > Connectez-vous ici ! </span>   -->
+    <h3  style ="margin: 50px 0; color: #1e1b58 ;" class="mb-4 display-5 font-weight-semi-bold"> Accéder à votre compte "e-shop" </h3>
+    <div id ="forminscri" class="cols-sm-10" style="color: #1e1b58 ;">
+      <form [formGroup]="formLogin" (ngSubmit)="login()">
+        <div class="alert alert-danger" *ngIf="errorLogin">Email ou mot de passe incorrecte !!</div>     
+        <div class="form-group">
+          <label for="email" class="cols-sm-2 control-label">Email</label>
+          <div class="  d-flex align-items-baseline cols-sm-10">
+            <span class="input-group-addon"><i class="fa fa-envelope fa mr-2 " aria-hidden="false"></i></span>
+              <div class="inputinsc">                
+                <input type="text" class="form-control" formControlName="email" name="email" id="email" placeholder="votre email ici" required />
+                <div class="valid-feedback">valide</div>
+                <div class="invalid-feedback">champs requis</div>
               </div>
             </div>
           </div>
+          <div class="form-group">
+            <label for="password" class="cols-sm-2 control-label">Mot de passe</label>
+              <div class=" d-flex align-items-baseline cols-sm-10">
+                <span class="input-group-addon"><i class="fa fa-lock fa-lg mr-2" aria-hidden="true"></i></span>
+                <div class="inputinsc">               
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    formControlName="password"
+                    id="password"
+                    placeholder="Votre mot de passe ici (min 8 carac.)"
+                    required />
+                 
 
+                  <div class="valid-feedback">valide</div>
+                  <div class="invalid-feedback">champs requis</div>
+              </div>
+            </div>
+          </div>
+                    <!-- button de validation-->
+          <div class="form-group" id="btn-modif">
+            <button
+              type="submit"
+              class="btn mr-3"
+            
+            >
+              Se connecter
+            </button>
+            <button type="button" routerLink="" class="btn">
+              Annuler
+            </button>
+          </div>
+          <a style="color:#1e1b58" href="/inscription">créer un compte</a>
 
-        </div>
-
+          <!-- button de validation-->
+        
       </form>
     </div>
   </div>
 </div>
-
-
-
-<app-footer></app-footer>

@@ -1,45 +1,109 @@
-<div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                <img class="rounded-circle mt-5" width="150px"
-                    src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" /><span
-                    class="font-weight-bold">{{name}}</span><span class="text-black-50">{{role}}</span><span> </span>
-            </div>
-        </div>
-        <div class="col-md-5 border-right">
-            <form class="p-3 py-5" [formGroup]="profileForm">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Mon Profil</h4>
-                </div>
-                <div class="row mt-2">
+<app-topbar1></app-topbar1>
+<app-topbar2></app-topbar2>
+
+
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<hr>
+<div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file"/>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col-md-6">
-                        <label class="labels">Nom & Prénom </label><input type="text" class="form-control"
-                            placeholder="Prénom" formControlName="client" />
+                        <div class="profile-head">
+                                    <h5>
+                                        {{name}}
+                                    </h5>
+                                    <h6>
+                                        {{role}}
+                                    </h6>
+                                    <br>
+                                    <br>
+                            <ul class="nav nav-tabs "  style="width:800px;" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true">Informations du compte</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#commandes" role="tab" aria-controls="profile" aria-selected="false">Commandes récentes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#paiement" role="tab" aria-controls="paiement" aria-selected="false">Modes de paiement</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
                     </div>
                 </div>
-                <div class="row mt-3">
-                    <div class="col-md-12">
-                        <label class="labels">Numéro de téléphone</label><input type="text" class="form-control"
-                            placeholder="enter phone number" formControlName="phoneNumber" />
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                            <p>Adresse de facturation </p>
+                            <a href="">adresse 1</a><br/>
+                            
+                            <p>Adresse de livraison </p>
+                            <a href="">adresse 1</a><br/>
+                         
+                        </div>
                     </div>
-                    <div class="col-md-12">
-                        <label class="labels">Addresse</label><input type="text" class="form-control"
-                            placeholder="enter address line 1" formControlName="addresse" />
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Nom </label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{name}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Rôle</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p> {{role}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>xxxx@xxxx.xxxx</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>123 456 7890</p>
+                                            </div>
+                                        </div>
+                                       
+                            </div>
+                            <div class="tab-pane fade" id="commandes" role="tabpanel" aria-labelledby="profile-tab">
+                                <p> Vous n’avez aucune commande enregistrée. </p>
+                     </div>
+                            <div class="tab-pane fade" id="paiement" role="tabpanel" aria-labelledby="profile-tab">
+                               <p> Vous n’avez aucun mode de paiement enregistré. </p>
                     </div>
-
-                    <div class="col-md-12">
-                        <label class="labels">Email </label><input type="text" class="form-control" placeholder="Email"
-                            formControlName="email" />
+                        </div>
                     </div>
                 </div>
-
-                <div class="mt-5 text-center">
-                    <button class="btn btn-warning profile-button" type="button">
-                        Modifier
-                    </button>
-                </div>
-            </form>
+            </form>           
         </div>
-    </div>
-</div>
