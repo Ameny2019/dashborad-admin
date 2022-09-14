@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {MessageService} from 'primeng/api';
 @Component({
   selector: 'app-login',
@@ -18,14 +18,19 @@ export class LoginComponent implements OnInit {
 
   formLogin: FormGroup;
   errorLogin = false;
+  urlParam: number;
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private route: ActivatedRoute
   ) {}
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.urlParam = +params.get('param');
+    });
     this.formLogin = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
@@ -45,7 +50,11 @@ export class LoginComponent implements OnInit {
       console.log('login is :', res);
       if (res.token && res.user.role === 'Client') {
         this.authService.setConnected(res.token, res.user, '1');
-        this.router.navigate(['/']);
+        if (this.urlParam == 0) {
+          this.router.navigate(['/']);
+        } else {
+          this.router.navigate(['/cartDetail']);
+        }
         this.messageService.add({severity:'success', summary:'Congratulation', detail:'Rebonjour !!'});
       } else {
         this.errorLogin = true;

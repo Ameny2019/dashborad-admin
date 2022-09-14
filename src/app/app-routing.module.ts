@@ -33,7 +33,7 @@ const routes: Routes = [
       { path: 'cartDetail', component: CartDetailComponent },
     ],
   },
-  { path: 'login', component: LoginComponent },
+  { path: 'login/:param', component: LoginComponent },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'product', component: AllproductComponent },
   { path: 'programme', component: ProgAnnuelComponent },
@@ -47,9 +47,9 @@ const routes: Routes = [
   { path: 'categorie', component: CategoriesComponent },
 
 
-  
- 
-  
+
+
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],

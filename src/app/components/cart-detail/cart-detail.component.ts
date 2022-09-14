@@ -1,6 +1,8 @@
 import { CartService } from 'src/app/services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import {AuthService} from "../../services/auth.service";
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-cart-detail',
   templateUrl: './cart-detail.component.html',
@@ -13,7 +15,7 @@ export class CartDetailComponent implements OnInit {
   paymentHandler: any = null;
   stripeAPIKey: any =
     'pk_test_51JdXf9DRYvhLYt7LKXzoEVUDlUQMXzXyDMHYKOEo0RRsLm6ZUYCfgPOaf6AH74OcyORolgD406J76HXvbnIPbLTD00XWoH3GaV';
-  constructor(public cartServ: CartService) {}
+  constructor(public cartServ: CartService, private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     console.log('Cart Items', this.cartServ.tempCartItems);
@@ -32,6 +34,15 @@ export class CartDetailComponent implements OnInit {
   deleteItemCart(ind: number) {
     this.cartServ.deleteItmCart(ind);
   }
+
+  cartStep2() {
+    if (this.authService.isConnected()) {
+
+    } else {
+      this.router.navigate(['/login/1']);
+    }
+  }
+
   makePayment(amount: any) {
     const paymentHandler = (<any>window).StripeCheckout.configure({
       key: this.stripeAPIKey,

@@ -4,7 +4,7 @@
 <div class="container-fluid bg-secondary mb-5">
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
         <h1 class="font-weight-semi-bold text-uppercase mb-3">Votre Panier</h1>
-       
+
     </div>
 </div>
 
@@ -30,7 +30,7 @@
                     <tr *ngFor="let prod of cartServ.tempCartItems;let index=index">
                         <th scope="row">{{prod.articleInfo.estamp.sujet}}</th>
                         <!-- <td>{{prod.articleInfo.nom}}</td>       -->
-                        <td>{{prod.articleInfo.price}}</td>                
+                        <td>{{prod.articleInfo.price}}</td>
                         <td>{{prod.quantity}}</td>
                         <td>{{prod.quantity*toNumber(prod.articleInfo.price)/1000}}</td>
                         <td><button class="btn btn-danger" (click)="deleteItemCart(index)">Supprimer</button></td>
@@ -66,6 +66,7 @@
                         <h5 class="font-weight-bold">Total</h5>
                         <h5 class="font-weight-bold">{{totalSum(cartServ.tempCartItems)/1000}}Dt</h5>
                     </div>
+                    <button class="btn btn-block btn-warning my-3 py-3" (click)="cartStep2()">Confirmer votre commande</button>
                     <button class="btn btn-block btn-warning my-3 py-3" (click)="makePayment(totalSum(cartServ.tempCartItems))">Passer au paiement</button>
                 </div>
             </div>
