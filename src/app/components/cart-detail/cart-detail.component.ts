@@ -36,6 +36,7 @@ export class CartDetailComponent implements OnInit {
     const paymentHandler = (<any>window).StripeCheckout.configure({
       key: this.stripeAPIKey,
       locale: 'auto',
+      currency: 'USD',
       token: function (stripeToken: any) {
         console.log(stripeToken);
         Swal.fire({
@@ -44,16 +45,16 @@ export class CartDetailComponent implements OnInit {
           title: 'Votre commande à été effectuer avec success',
           showConfirmButton: false,
         }).then(() => {
-          
+
         });
       },
     });
     paymentHandler.open({
       name: 'La Poste Tunisienne',
       description: 'Confirmation des achats',
-      amount: amount * 100,
+      amount: amount / 10,
     });
-    this.cartServ.clearCart();
+    //this.cartServ.clearCart();
   }
 
   /*------------------------------------------

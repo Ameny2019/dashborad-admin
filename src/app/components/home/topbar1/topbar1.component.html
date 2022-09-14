@@ -3,8 +3,8 @@
     align-items: center;
     justify-content: space-between;">
         <div class="">
-            <a href="" ><img src="assets/img/postetn.png" alt="" style="width: 130px; margin: 10px;"></a>
-            
+            <a routerLink="/" ><img src="assets/img/postetn.png" alt="" style="width: 130px; margin: 10px;"></a>
+
         </div>
 
         <div>
@@ -14,21 +14,21 @@
                 <a routerLink="/login" class="nav-item nav-link" style="margin:0 30px  ; font-weight: 500; color: #1b1c1b;" >Se connecter</a>
             </div>
 
-             
+
 
             <ng-template #connected >
-                
 
-               
+
+
                 <div class="navbar-nav" style="display:flex; flex-direction:column" >
                     <a href="/profile" ><span class="input-group-addon" ><i style="font-size:35px ;color:#1E1B58;margin-bottom: 10px;" class="fa fa-user-circle mr-2" aria-hidden="true"></i></span></a>
-                    <a href="/profile" style="text-decoration:none"><p style="margin-bottom:-5px ; font-weight: 500; color: #1E1B58;"> Bonjour ,{{authService.getCoonectedUser()?.nom}} !   </p></a>           
+                    <a href="/profile" style="text-decoration:none"><p style="margin-bottom:-5px ; font-weight: 500; color: #1E1B58;"> Bonjour ,{{authService.getCoonectedUser()?.nom}} !   </p></a>
                     <a (click)="authService.logoutUser()" class="nav-item nav-link" style="margin:0 30px  ; font-weight: 500;">Se déconnecter</a>
                 </div>
             </ng-template>
 
 
-        
+
 
         </div>
 
