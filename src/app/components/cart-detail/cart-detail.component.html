@@ -42,9 +42,7 @@
         <div class="col-lg-4">
             <!-- <form class="mb-5" action="">
                 <div class="input-group">
-                    <input type="text" class="form-control p-4" placeholder="Coupon Code">
-                    <div class="input-group-append">
-                        <button class="btn btn-warning">Appliquer le code de reduction</button>
+
                     </div>
                 </div>
             </form> -->
@@ -67,8 +65,7 @@
                         <h5 class="font-weight-bold">Total</h5>
                         <h5 class="font-weight-bold">{{totalSum(cartServ.tempCartItems)/1000}}Dt</h5>
                     </div>
-                    <button class="btn btn-block btn-warning my-3 py-3" (click)="cartStep2()">Confirmer votre commande</button>
-                    <button class="btn btn-block btn-warning my-3 py-3" (click)="makePayment(totalSum(cartServ.tempCartItems))">Passer au paiement</button>
+                    <button class="btn btn-block btn-warning my-3 py-3" *ngIf="cartServ.tempCartItems.length > 0" (click)="cartStep2()">Confirmer votre commande</button>
                 </div>
             </div>
         </div>

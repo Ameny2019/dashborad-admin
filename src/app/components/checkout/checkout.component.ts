@@ -57,9 +57,31 @@ export class CheckoutComponent implements OnInit {
 
     }
 
-else { }
+else { this.saveCart()}
 
     }
+    saveCart(){
+    let subtotal=this.totalSum(this.cartServ.tempCartItems)/1000;
+    let items = [];
+    for (let item of this.cartServ.tempCartItems) {
+      items.push({
+        productId: item.productId,
+        quantity: item.quantity,
+        price: item.articleInfo.price,
+        total: item.articleInfo.price * item.quantity
+      })
+    }
+    let cart:any =
+      {subTotal:subtotal,
+        items: items,
+        user: this.authService.getCoonectedUser()._id
+      };
+      this.cartServ.saveCart(cart).subscribe((res) => {
+        alert('c bon')
+      });
+    }
+  //saveCart(cart)
+
 
   invokeStripe() {
     if (!window.document.getElementById('stripe-script')) {

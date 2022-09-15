@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {environment} from 'src/environments/environment';
 import {MessageService} from "primeng/api";
 
 @Injectable({
@@ -8,10 +8,13 @@ import {MessageService} from "primeng/api";
 })
 export class CartService {
   public tempCartItems: any[] = [];
+
   constructor(private http: HttpClient, private messageService: MessageService) {
     if (localStorage.getItem('cart') !== null && localStorage.getItem('cart') !== undefined) {
       this.tempCartItems = JSON.parse(localStorage.getItem('cart'));
+
     }
+    console.log(this.tempCartItems);
   }
 
   addToCartTemp(data: any) {
@@ -22,7 +25,7 @@ export class CartService {
       product.quantity += data.quantity;
     }
     console.log(data);
-    this.messageService.add({severity:'success', summary:'Panier', detail:'Produit ajouté avec succès'});
+    this.messageService.add({severity: 'success', summary: 'Panier', detail: 'Produit ajouté avec succès'});
     this.persistCart();
 
   }
@@ -51,17 +54,22 @@ export class CartService {
   deleteCart() {
     return this.http.delete(`${environment.baseURL}/Cart/empty-cart`);
   }
+  saveCart(cart) {
+    return this.http.post(`${environment.baseURL}/cart/createCart`, cart);
+  }
 
   deleteProductByIdCart(id: any) {
     return this.http.delete(
       `${environment.baseURL}/Cart/removeSingleProduct/${id}`
     );
   }
+
   deleteItmCart(ind: number) {
     let newList = this.tempCartItems.filter((item, index) => index !== ind);
     this.tempCartItems = newList;
     this.persistCart();
   }
+
   clearCart() {
     this.tempCartItems = [];
     localStorage.removeItem('cart');
