@@ -18,6 +18,8 @@ import { NotFoundErrorComponent } from './not-found-error/not-found-error.compon
 import {ServiceErrorComponent} from './service-error/service-error.component';
 import { HistphilComponent } from './components/histphil/histphil.component';
 import {CategoriesComponent} from './components/home/categories/categories.component'
+import {CheckoutComponent} from "./components/checkout/checkout.component";
+import {InvoiceComponent} from "./components/invoice/invoice.component";
 
 
 
@@ -45,6 +47,8 @@ const routes: Routes = [
   { path: 'error500', component: ServiceErrorComponent },
   { path: 'histphil', component: HistphilComponent },
   { path: 'categorie', component: CategoriesComponent },
+  {path:'checkout', component : CheckoutComponent},
+  {path:'invoice',component:InvoiceComponent},
 
 
 

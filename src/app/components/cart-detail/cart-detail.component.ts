@@ -37,6 +37,7 @@ export class CartDetailComponent implements OnInit {
 
   cartStep2() {
     if (this.authService.isConnected()) {
+      this.router.navigate(['/checkout']);
 
     } else {
       this.router.navigate(['/login/1']);

@@ -36,6 +36,8 @@ import { BannerComponent } from './components/home/banner/banner.component';
 import { NotFoundErrorComponent } from './not-found-error/not-found-error.component';
 import { ServiceErrorComponent } from './service-error/service-error.component';
 import { HistphilComponent } from './components/histphil/histphil.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,7 @@ import { HistphilComponent } from './components/histphil/histphil.component';
     Topbar1Component,
     Topbar2Component,
     SidebarComponent,
-   
+
     FeaturedComponent,
     CategoriesComponent,
     OfferComponent,
@@ -58,7 +60,7 @@ import { HistphilComponent } from './components/histphil/histphil.component';
     ProgAnnuelComponent,
     QrComponent,
     EfleureComponent,
-   
+
     LayoutComponent,
     CartDetailComponent,
     InscriptionComponent,
@@ -67,7 +69,9 @@ import { HistphilComponent } from './components/histphil/histphil.component';
     NotFoundErrorComponent,
     ServiceErrorComponent,
     HistphilComponent,
-   
+    CheckoutComponent,
+    InvoiceComponent,
+
   ],
   imports: [
     BrowserModule,
