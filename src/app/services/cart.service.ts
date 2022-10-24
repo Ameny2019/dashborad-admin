@@ -51,6 +51,10 @@ export class CartService {
     return this.http.get(`${environment.baseURL}/Cart/getCart`);
   }
 
+  getCartbyid(idcart) {
+    return this.http.get(`${environment.baseURL}/Cart/getcartbyid/${idcart}`);
+  }
+
   deleteCart() {
     return this.http.delete(`${environment.baseURL}/Cart/empty-cart`);
   }

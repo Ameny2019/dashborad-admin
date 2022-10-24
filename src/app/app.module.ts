@@ -38,6 +38,11 @@ import { ServiceErrorComponent } from './service-error/service-error.component';
 import { HistphilComponent } from './components/histphil/histphil.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
+import { CondventeComponent } from './components/condvente/condvente.component';
+import { EditprofileComponent } from './components/editprofile/editprofile.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { EditprofileService } from './services/editprofile.service';
+
 
 @NgModule({
   declarations: [
@@ -71,6 +76,9 @@ import { InvoiceComponent } from './components/invoice/invoice.component';
     HistphilComponent,
     CheckoutComponent,
     InvoiceComponent,
+    CondventeComponent,
+    EditprofileComponent,
+    
 
   ],
   imports: [
@@ -81,9 +89,10 @@ import { InvoiceComponent } from './components/invoice/invoice.component';
     HttpClientModule,
     NgSelectModule,
     ToastModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    Ng2SearchPipeModule
   ],
-  providers: [MessageService],
+  providers: [MessageService,EditprofileService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

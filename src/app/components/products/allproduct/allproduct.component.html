@@ -2,65 +2,127 @@
 <app-topbar2></app-topbar2>
 <app-sidebar></app-sidebar>
 
-
 <!-- stamps -->
 
-<hr>
+<hr />
+<div class="col-6 col-6" style="margin: auto">
+  <form #f="ngForm" action="">
+    <div class="input-group">
+      <input
+        type="text"
+        name="keyword"
+        id="keyword"
+        (keyup)="onTapeKeyword(f.value)"
+        bindLabel="name"
+        placeholder="Parcourez le magasin entier ici ..."
+        class="form-control bg-secondary input-text"
+        role="combobox"
+        bindValue="id"
+        aria-haspopup="false"
+        aria-autocomplete="both"
+        autocomplete="off"
+        aria-expanded="false"
+        lect
+        [(ngModel)]="searchText"
+        style="border-radius: 10px 0 0 10px"
+      />
 
-
-<div class="row px-xl-5 pb-3">
-    <div class="col-lg-3 col-md-6 col-sm-12 pb-1" *ngFor="let product of products">
-        <div *ngIf="product.producType == 'estamp'" class="card product-item border-0 mb-4">
-            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <img (click)="toDetail(product)" class="img-fluid w-100" src="http://localhost:3000/{{product?.estamp?.photo}}" alt=""
-                    style="height: 550PX;padding: 50px;">
-            </div>
-            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                <h6 class="text-truncate mb-3">{{product?.estamp?.sujet}}</h6>
-                <div class="d-flex justify-content-center">
-                    <h6 style="font-size: 20px; color:#fd0000;">Prix : {{product?.price/1000}} DT</h6>
-                </div>
-                <span class="badge badge-pill badge-success " >En Stock</span>
-            </div>
-            <div class="card-footer d-flex justify-content-center bg-light border">
-                <a (click)="toDetail(product)" class="btn btn-sm text-dark "><i
-                        class="fas fa-eye text-primary mr-1"></i>Voir details</a>
-                <!-- <a class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Ajouter au panier</a> -->
-            </div>
-        </div>
+      <div class="input-group-append">
+        <button
+          type="button"
+          class="input-group-text"
+          style="background-color: #fdc600; border-radius: 0 10px 10px 0"
+        >
+          <i class="fa fa-search" style="color: white"></i>
+        </button>
+      </div>
     </div>
+  </form>
 </div>
 
+<hr />
 
+<div class="row px-xl-5 pb-3">
+  <div
+    class="col-lg-3 col-md-6 col-sm-12 pb-1"
+    *ngFor="let product of products | filter: searchText"
+  >
+    <div
+      *ngIf="product.producType == 'estamp'"
+      class="card product-item border-0 mb-4"
+    >
+      <div
+        class="card-header product-img position-relative overflow-hidden bg-transparent border p-0"
+      >
+        <img
+          (click)="toDetail(product)"
+          class="img-fluid w-100"
+          src="http://localhost:3000/{{ product?.estamp?.photo }}"
+          alt=""
+          style="height: 420px; padding: 50px"
+        />
+      </div>
+      <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+        <h6 class="text-truncate mb-3">{{ product?.estamp?.sujet }}</h6>
+        <div class="d-flex justify-content-center">
+          <h6 style="font-size: 20px; color: #fd0000">
+            Prix : {{ product?.price / 1000 }} DT
+          </h6>
+        </div>
+        <span class="badge badge-pill badge-success">En Stock</span>
+      </div>
+      <div class="card-footer d-flex justify-content-center bg-light border">
+        <a (click)="toDetail(product)" class="btn btn-sm text-dark"
+          ><i class="fas fa-eye text-primary mr-1"></i>Voir details</a
+        >
+        <!-- <a class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Ajouter au panier</a> -->
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- fleurs -->
 
-
-
 <div class="row px-xl-5 pb-3">
-    <div class="col-lg-3 col-md-6 col-sm-12 pb-1" *ngFor="let product of products">
-        <div *ngIf="product.producType == 'efleur'" class="card product-item border-0 mb-4">
-            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <img (click)="toDetail(product)" class="img-fluid w-100" src="http://localhost:3000/{{product?.efleur?.photo}}"
-                    alt="Fleur de la poste"  style="height: 450PX;padding: 50px;">
-            </div>
-            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                <h6 class="text-truncate mb-3">{{product?.efleur?.nom}}</h6>
-                <div class="d-flex justify-content-center">
-                     <h6 style="font-size: 20px; color:#fd0000;">Prix : {{product?.price}},000 DT</h6>
-                </div>
-                 <span class="badge badge-pill badge-danger " > Epuisé</span>
-            </div>
-            
-            <div class="card-footer d-flex justify-content-center bg-light border">
-                <a (click)="toDetail(product)" class="btn btn-sm text-dark p-0"><i
-                        class="fas fa-eye text-primary mr-1"></i>Voir detail</a>
-                <!-- <a class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Ajouter au panier</a> -->
-            </div>
+  <div
+    class="col-lg-3 col-md-6 col-sm-12 pb-1"
+    *ngFor="let product of products | filter: searchText"
+  >
+    <div
+      *ngIf="product.producType == 'efleur'"
+      class="card product-item border-0 mb-4"
+    >
+      <div
+        class="card-header product-img position-relative overflow-hidden bg-transparent border p-0"
+      >
+        <img
+          (click)="toDetail(product)"
+          class="img-fluid w-100"
+          src="http://localhost:3000/{{ product?.efleur?.photo }}"
+          alt="Fleur de la poste"
+          style="height: 380px; padding: 50px"
+        />
+      </div>
+      <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+        <h6 class="text-truncate mb-3">{{ product?.efleur?.nom }}</h6>
+        <div class="d-flex justify-content-center">
+          <h6 style="font-size: 20px; color: #fd0000">
+            Prix : {{ product?.price }},000 DT
+          </h6>
         </div>
+        <span class="badge badge-pill badge-danger"> Epuisé</span>
+      </div>
+
+      <div class="card-footer d-flex justify-content-center bg-light border">
+        <a (click)="toDetail(product)" class="btn btn-sm text-dark p-0"
+          ><i class="fas fa-eye text-primary mr-1"></i>Voir detail</a
+        >
+        <!-- <a class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Ajouter au panier</a> -->
+      </div>
     </div>
+  </div>
 </div>
 
-<hr>
+<hr />
 
 <app-footer></app-footer>

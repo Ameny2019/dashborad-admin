@@ -1,3 +1,4 @@
+
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ProgAnnuelComponent } from './components/prog-annuel/prog-annuel.component';
 import { LoginComponent } from './components/login/login.component';
@@ -20,8 +21,8 @@ import { HistphilComponent } from './components/histphil/histphil.component';
 import {CategoriesComponent} from './components/home/categories/categories.component'
 import {CheckoutComponent} from "./components/checkout/checkout.component";
 import {InvoiceComponent} from "./components/invoice/invoice.component";
-
-
+import {CondventeComponent} from "./components/condvente/condvente.component";
+import {EditprofileComponent} from "./components/editprofile/editprofile.component"
 
 const routes: Routes = [
   //{ path: '', redirectTo: 'home' },
@@ -48,7 +49,9 @@ const routes: Routes = [
   { path: 'histphil', component: HistphilComponent },
   { path: 'categorie', component: CategoriesComponent },
   {path:'checkout', component : CheckoutComponent},
-  {path:'invoice',component:InvoiceComponent},
+  {path:'invoice/:id_cart',component:InvoiceComponent},
+  {path:'ConditionsVente',component:CondventeComponent},
+  {path:'editprofile', component:EditprofileComponent}
 
 
 

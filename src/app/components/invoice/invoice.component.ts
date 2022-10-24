@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+
+import {Component, OnInit} from '@angular/core';
+import {CartService} from "../../services/cart.service";
+import {AuthService} from "../../services/auth.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {environment} from "../../../environments/environment";
+
 
 @Component({
   selector: 'app-invoice',
@@ -7,9 +13,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvoiceComponent implements OnInit {
 
-  constructor() { }
+  constructor(public cartServ: CartService,  public authService: AuthService, private router: Router, private route: ActivatedRoute) {
+  }
+
+  cart: any;
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      let idcart = params.get('id_cart');
+      this.cartServ.getCartbyid(idcart).subscribe((res: any) => {
+        this.cart = res.data
+      });
+    });
+
   }
+
 
 }

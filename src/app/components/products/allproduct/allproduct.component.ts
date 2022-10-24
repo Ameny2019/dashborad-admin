@@ -10,6 +10,8 @@ import { ProductService } from 'src/app/services/product.service';
 export class AllproductComponent implements OnInit {
  
   products:any;
+  searchText
+
   n:number=0;
   constructor(private productService:ProductService,
               private router:Router
@@ -45,6 +47,10 @@ export class AllproductComponent implements OnInit {
   toDetail(product:any){
     localStorage.setItem('productToDetail',JSON.stringify(product));
 this.router.navigateByUrl("/detail")
+  }
+
+  onTapeKeyword(value: { keyword: any }): void {
+    console.log(value.keyword,"thats what you are typing")
   }
 
 

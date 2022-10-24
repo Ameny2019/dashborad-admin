@@ -89,3 +89,28 @@
     font-weight: 600;
     color: #0062cc;
 }
+
+.igreen{
+    color:green
+}
+
+.ired{
+    color:red
+}
+
+
+.button-group {
+    position: absolute;
+    right: 0;
+    top: 0
+  }
+  .button-group button {
+    display: inline;
+  }
+  span {
+    position: relative;
+  }
+  input {
+    position: absolute;
+    left: 0;
+  }

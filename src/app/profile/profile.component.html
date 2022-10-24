@@ -1,13 +1,17 @@
 <app-topbar1></app-topbar1>
-<app-topbar2></app-topbar2>
-
-
 
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<hr>
+
+
+<div class="container-fluid mb-5"   style="background-color: #1E1B58;">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 200px">
+        <h1 class="font-weight-semi-bold text-uppercase mb-3"  style="color: #fdc600;">Votre profil</h1>
+  
+    </div>
+  </div>
 <div class="container emp-profile">
             <form method="post">
                 <div class="row">
@@ -44,19 +48,38 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-                    </div>
+                    <!-- <div class="col-md-2">
+                        <a routerLink="/editprofile"><span class="badge badge-pill badge-warning" style="color:white; padding:10px"> Modifier profil  </span></a>
+                      
+                    </div> -->
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <p>Adresse de facturation </p>
-                            <a href="">adresse 1</a><br/>
+                            <span>Adresse de facturation </span>
 
-                            <p>Adresse de livraison </p>
-                            <a href="">adresse 1</a><br/>
+<p>{{  adresse}}</p>
+                            <div class="block">
+                                <app-editprofile [text]="text"> </app-editprofile>
+                                </div>
+                            <!-- <div class="d-flex">
+                                <p>{{adresse}} </p>
+                                <input [(ngModel)]="editText" *ngIf="editmode" type="text" style="margin-left:0px ; border-width: 0 0 1px 0;">
+                            
+                            
+                            
+                            
+                                <div class="kk">
+                                    <button *ngIf="!editmode" (click)="edit()" style="border:none;background: none;"><i
+                                            class="bi bi-pencil-square "></i></button>
+                                    <button *ngIf="editmode" (click)="save()" style="border:none;background: none;"><i
+                                            class="bi bi-check igreen"></i></button>
+                                    <button *ngIf="editmode" (click)="cancel()" style="border:none;background: none;"><i
+                                            class="bi bi-x ired"></i></button>
+                                </div>
+                            </div><br/> -->
 
+                           
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -67,23 +90,47 @@
                                                 <label>Nom </label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{name}}</p>
+
+                                                <!-- <div class="d-flex">
+                                                    <p>{{name}} </p>
+                                                    <input [(ngModel)]="editText" *ngIf="editmode" type="text" style="margin-left:0px ; border-width: 0 0 1px 0;">
+                                                                                             
+                                                
+                                                    <div class="button-group">
+                                                        <button *ngIf="!editmode" (click)="edit()" style="border:none;background: none;"><i
+                                                                class="bi bi-pencil-square "></i></button>
+                                                        <button *ngIf="editmode" (click)="save()" style="border:none;background: none;"><i
+                                                                class="bi bi-check igreen"></i></button>
+                                                        <button *ngIf="editmode" (click)="cancel()" style="border:none;background: none;"><i
+                                                                class="bi bi-x ired"></i></button>
+                                                    </div>
+                                                </div> -->
+                                                
+                                                       
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Rôle</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p> {{role}}</p>
-                                            </div>
-                                        </div>
+                                       
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>xxxx@xxxx.xxxx</p>
+                                                <!-- <div class="d-flex">
+                                                    <p>{{email}} </p>
+                                                    <input [(ngModel)]="editText" *ngIf="editmode" type="text" style="margin-left:0px ; border-width: 0 0 1px 0;">
+                                                
+                                                
+                                                
+                                                
+                                                    <div class="button-group">
+                                                        <button *ngIf="!editmode" (click)="edit()" style="border:none;background: none;"><i
+                                                                class="bi bi-pencil-square "></i></button>
+                                                        <button *ngIf="editmode" (click)="save()" style="border:none;background: none;"><i
+                                                                class="bi bi-check igreen"></i></button>
+                                                        <button *ngIf="editmode" (click)="cancel()" style="border:none;background: none;"><i
+                                                                class="bi bi-x ired"></i></button>
+                                                    </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                         <div class="row">
@@ -91,7 +138,22 @@
                                                 <label>Phone</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>123 456 7890</p>
+                                                <!-- <div class="d-flex">
+                                                    <p> 00 216 22 333 444 </p>
+                                                    <input [(ngModel)]="editText" *ngIf="editmode" type="text" style="margin-left:0px ; border-width: 0 0 1px 0;">
+                                                
+                                                
+                                                
+                                                
+                                                    <div class="button-group">
+                                                        <button *ngIf="!editmode" (click)="edit()" style="border:none;background: none;"><i
+                                                                class="bi bi-pencil-square "></i></button>
+                                                        <button *ngIf="editmode" (click)="save()" style="border:none;background: none;"><i
+                                                                class="bi bi-check igreen"></i></button>
+                                                        <button *ngIf="editmode" (click)="cancel()" style="border:none;background: none;"><i
+                                                                class="bi bi-x ired"></i></button>
+                                                    </div>
+                                                </div> -->
                                             </div>
                                         </div>
 
@@ -107,3 +169,41 @@
                 </div>
             </form>
         </div>
+
+        
+<!-- <div class="d-flex">
+    <span>{{text}} </span>
+    <input [(ngModel)]="editText" *ngIf="editmode" type="text" style="border-width:0 0 1px 0; width:20px">
+
+
+
+
+    <div class="vv">
+        <button *ngIf="!editmode" (click)="edit()" style="border:none;background: none;"><i
+                class="bi bi-pencil-square "></i></button>
+        <button *ngIf="editmode" (click)="save()" style="border:none;background: none;"><i
+                class="bi bi-check igreen"></i></button>
+        <button *ngIf="editmode" (click)="cancel()" style="border:none;background: none;"><i
+                class="bi bi-x ired"></i></button>
+    </div>
+</div> -->
+
+
+
+<!-- <button (click)="login()">{{loginButtonText}}</button> -->
+
+<div class="block">
+<app-editprofile [text]="text"></app-editprofile>
+</div>
+
+<!-- <div *ngIf="editprofileService.loggedIn">
+<h2>Edit Log</h2>
+
+<ul *ngFor="let item of editprofileService.editLog">
+  <li>{{ item }}</li>
+</ul>
+</div> -->
+
+    
+
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">

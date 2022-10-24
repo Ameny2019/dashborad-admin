@@ -1,7 +1,10 @@
 #cat{
   
     border: solid 0.5px #FDC600;
+    background-color: white;
+    z-index: 2;
    
     
 }
+
 

@@ -593,7 +593,7 @@ pre code {
 }
 
 .container,
-.container-fluid,
+
 .container-sm,
 .container-md,
 .container-lg,
@@ -632,7 +632,7 @@ pre code {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
+  /* margin-right: -15px; */
   margin-left: -15px;
 }
 
@@ -7455,7 +7455,7 @@ button.bg-dark:focus {
 
 .mb-5,
 .my-5 {
-  margin-bottom: 3rem !important;
+  margin-bottom: 0rem !important;
 }
 
 .ml-5,

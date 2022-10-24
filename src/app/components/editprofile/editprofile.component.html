@@ -1,0 +1,26 @@
+
+       
+
+    <div class="d-flex">
+        <span>{{text}} </span>
+        <input [(ngModel)]="editText"  *ngIf="editmode" type="text" >
+    
+    
+    
+    
+        <div class="vv">
+            <button *ngIf="!editmode" (click)="edit()" style="border:none;background: none;"><i
+                    class="bi bi-pencil-square "></i></button>
+            <button *ngIf="editmode" (click)="save()" style="border:none;background: none;"><i
+                    class="bi bi-check igreen"></i></button>
+            <button *ngIf="editmode" (click)="cancel()" style="border:none;background: none;"><i
+                    class="bi bi-x ired"></i></button>
+        </div>
+    </div>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+
+
+    
+

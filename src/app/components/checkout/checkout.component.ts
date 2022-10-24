@@ -65,7 +65,7 @@ else { this.saveCart()}
     let items = [];
     for (let item of this.cartServ.tempCartItems) {
       items.push({
-        productId: item.productId,
+        product_name: item.articleInfo.estamp.sujet,
         quantity: item.quantity,
         price: item.articleInfo.price,
         total: item.articleInfo.price * item.quantity
@@ -76,8 +76,8 @@ else { this.saveCart()}
         items: items,
         user: this.authService.getCoonectedUser()._id
       };
-      this.cartServ.saveCart(cart).subscribe((res) => {
-        alert('c bon')
+      this.cartServ.saveCart(cart).subscribe((res:any) => {
+        this.router.navigate(['/invoice',res._id]);
       });
     }
   //saveCart(cart)

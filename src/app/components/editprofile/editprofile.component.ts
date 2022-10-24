@@ -1,23 +1,24 @@
+import { AuthService } from 'src/app/services/auth.service';
+
 import { Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
-import { EditprofileService } from '../services/editprofile.service';
+import { Component, OnInit,Input} from '@angular/core';
+import { EditprofileService } from '../../services/editprofile.service';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+  selector: 'app-editprofile',
+  templateUrl: './editprofile.component.html',
+  styleUrls: ['./editprofile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class EditprofileComponent implements OnInit {
 
 
+  @Input() 
+  text: string ;
 
-  loginButtonText = 'login'
-  text ="test1fdf";
-  
-
-
+  editmode = false;
+  editText = '';
 
 
   public profileForm: FormGroup;
@@ -25,7 +26,8 @@ export class ProfileComponent implements OnInit {
   public role:string; 
   public email:string; 
   public adresse:string; 
-  constructor(private formBuilder: FormBuilder,public editprofileService:EditprofileService) {
+  _id: any;
+  constructor(public formBuilder: FormBuilder,public AuthService:AuthService, public editprofileService:EditprofileService) {
     this.profileForm = this.formBuilder.group({
       addresse: ['', Validators.required],
 
@@ -58,13 +60,24 @@ export class ProfileComponent implements OnInit {
 
   }
 
+    edit() {
+      this.editmode = true;
+      this.editText = this.text;
+    }
   
-  login() {
-    this.editprofileService.loggedIn = !this.editprofileService.loggedIn;
-    this.loginButtonText = this.editprofileService.loggedIn ? 'log out' : 'login'
-  }
 
-   
+    save() {
+      this.editmode = false;
+      this.text = this.editText; this.editmode = false;
+      this.text = this.editText; this.editmode = false;
+      this.text = this.editText;
+      this.editprofileService.save('text', this.editText);
+    }
+  
+    cancel() {
+      this.editmode = false;
+      this.editText = '';
+    }
   }
 
 

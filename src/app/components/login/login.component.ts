@@ -37,11 +37,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  // LoginUser(){
-  //   this.LoginUser(this.LoginUserData).subscribe();
-  //       (res:any) => console.log(res);
-  //       (err:any) => console.log(err);
-  //   }
+
 
 
   login() {
